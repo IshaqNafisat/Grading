@@ -31,32 +31,36 @@
     
     let inputElement = document.getElementById('enter')
     let showResult = document.getElementById('result')
+    let grade = document.getElementById('Grade')
 
     function checkGrade(){
         let inputValue = inputElement.value.trim()
 
         if (inputValue === ''){
-            alert ('input field is mandatory')        
+            alert ('input field is mandatory')            
+        } else if (isNaN(inputValue)){
+            alert('score must be a number')
         } else if (Number(inputValue) < 0 ) {
             alert('score cannot be less than 0')
         } else if (Number(inputValue) > 100 ){
             alert ('score can not be greater than 100')
         } else {
             if (Number(inputValue) >= 80 ){
-                showResult.innerHTML = 'A'
+                grade.innerHTML = 'A'
             } else if (Number(inputValue) >= 70) {
-                showResult.innerHTML = 'B'                
+                grade.innerHTML = 'B'                
             } else if (Number(inputValue) >= 60){
-                showResult.innerHTML = 'C'                
+                grade.innerHTML = 'C'                
             } else if (Number(inputValue) >= 50){
-                showResult.innerHTML = 'D'
+                grade.innerHTML = 'D'
             }else if (Number(inputValue) >= 40){
-                showResult.innerHTML = 'E'
+                grade.innerHTML = 'E'
             } else {
-                showResult.innerHTML = 'F'
+                grade.innerHTML = 'F'
             }
 
         }
+        inputElement.value = "";
     }
 
 </script>
